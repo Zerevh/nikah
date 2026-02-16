@@ -67,7 +67,7 @@ class Template extends CI_Controller
             if ($this->setWeeding_model->insert_data($data)) {
                 $this->session->set_flashdata('success', 'Data berhasil disimpan!');
             } else {
-                $this->session->set_flashdata('error', 'Gagal menyimpan data..');
+                $this->session->set_flashdata('error', 'Gagal menyimpan data.');
             }
             redirect('template/tempweeding');
         }

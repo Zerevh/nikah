@@ -42,9 +42,9 @@
                                                     <td><?= $t['nm_wanita']; ?></td>
                                                     <td><?= $t['tgl_acr']; ?></td>
                                                   <td>
-                                                        <a href="##" class="fas fa-edit"></a>
+                                                        <a href="<?= base_url() ?>template/editweeding/<?= $t['id_wdg']; ?>" class="fas fa-edit"></a>
                                                         <a href="##" class="fas fa-images"></a>
-                                                        <a href="##" onclick="return confirm('Yakin anda ingin menghapusnya?');" class="fas fa-trash-alt"></a>
+                                                        <a href="<?= base_url() ?>template/hpsweeding/<?= $t['id_wdg']; ?>" onclick="return confirm('Yakin anda ingin menghapusnya?');" class="fas fa-trash-alt"></a>
                                                         <a href="#" class="far fa-calendar-alt"></a>
                                                         <a href="##" class="fas fa-exclamation-triangle"></a>
                                                     </td>

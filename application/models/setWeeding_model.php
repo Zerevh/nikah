@@ -18,4 +18,22 @@ class setWeeding_model extends CI_Model
         }
         return $this->db->insert('tb_weeding', $data);
     }
+
+    public function edit_data($id_wdg, $data) {
+        if ( empty($id_wdg) ||!is_array($data) || empty($data)) {
+            return false;
+        }
+        $this->db->where('id_wdg', $id_wdg);
+        return $this->db->update('tb_weeding', $data);
+    }
+
+    public function delete_data($id)
+    {
+        $this->db->delete('tb_weeding', ['id_wdg' => $id]);
+    }
+
+    public function getTemplateById($id)
+    {
+        return $this->db->get_where('tb_weeding', ['id_wdg' => $id])->row_array();
+    }
 }

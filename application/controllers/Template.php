@@ -10,6 +10,13 @@ class Template extends CI_Controller
         $this->load->model("setWeeding_model");
     }
 
+    public function tesTampil($id) //uji coba
+    {
+        $data['temp'] = $this->setWeeding_model->getTemplateById($id);
+
+        $this->load->view('themes/temp1/index.html', $data);
+    }
+
     public function tempWeeding()
     {
         $data['title'] = 'List Acara Weeding';

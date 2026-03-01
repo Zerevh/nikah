@@ -1,0 +1,503 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hijra & Aida</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sacramento&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <!-- SimplyCountdown -->
+    <link rel="stylesheet" href="countdown/default.css">
+    <!--<link rel="stylesheet" href="countdown/circle.css">
+    <link rel="stylesheet" href="countdown/cyber.css">
+    <link rel="stylesheet" href="countdown/dark.css">
+    <link rel="stylesheet" href="countdown/losange.css">-->
+
+    <!--<div class="countdown simply-countdown"></div>
+    <div class="countdown simply-countdown-dark"></div>
+    <div class="countdown simply-countdown-cyber"></div>
+    <div class="countdown simply-countdown-losange"></div>
+    <div class="countdown simply-countdown-circle"></div>-->
+
+    <script src="countdown/simplyCountdown.umd.js"></script>
+    <!--                    Control + /                  -->
+
+    <!-- Icon Bootstraps -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+    <link rel="stylesheet" href="<?= base_url('assets/'); ?>temp-css/style.css">
+  </head>
+  <body>
+    
+    <section id="hero" class="hero w-100 h-100 p-3 mx-auto text-center d-flex justify-content-center align-items-center text-white">
+        <main>
+            <h4>Kepada <span></span> </h4>
+            <h1>Hijra & Aida</h1>
+            <p class="p2">Akan melangsungkan resepsi pernikahan dalam;</p2>
+            <div class="my-countdown simply-countdown"></div>
+            <a href="#undang" class="btn btn-lg mt-4" onClick="enableScroll()">Lihat Undangan</a>
+        </main>
+    </section>
+
+    <nav class="navbar navbar-expand-md bg-transparent sticky-top mynavbar">
+      <div class="container">
+        <a class="navbar-brand" href="#">Life Wedding</a>
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Life Wedding</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <div class="navbar-nav ms-auto">
+              <a class="nav-link" href="#home">Home</a>
+              <a class="nav-link" href="#info">Info</a>
+              <a class="nav-link" href="#story">Story</a>
+              <a class="nav-link" href="#gallery">Galery</a>
+              <a class="nav-link" href="#rsvp">RSPV</a>
+              <a class="nav-link" href="#gifts">GIFTS</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <section id="home" class="home">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-8 text-center">
+            <h2>Acara Pernikahan</h2>
+            <h3>Diselenggarakan pada tanggal 25 Mei 2025 di Marabahan, Kalimantan Selatan</h3>
+            <p>Oleh karena itu, dengan segala hormat kami untuk mengundang Bapak/Ibu, Saudara/i, untuk berhadir pada acara pernikahan kami.</p>
+          </div>
+        </div>
+
+        <div class="row couple">
+          <div class="col-lg-6">
+            <div class="row">
+              <div class="col-8 text-end">
+                <h3>M.Hijra Anshordiknas</h3>
+                <p><?= $temp['nm_pria']; ?></p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque est nemo, voluptates vero dolore aut.</p>
+                <p>Putra dari Bpk. Lorem <br> dan <br> Ibu Ipsum</p>
+              </div>
+              <div class="col-4">
+                <img src="img/man.png" alt="Mohammad Hijra Anshordiknas" class="img-responsive rounded-circle">
+              </div>
+            </div>
+          </div>
+
+          <span class="heart"><i class="bi bi-heart-fill"></i></span>
+
+          <div class="col-lg-6">
+            <div class="row">
+              <div class="col-4">
+                <img src="img/woman.png" alt="Aida" class="img-responsive rounded-circle">
+              </div>
+              <div class="col-8">
+                <h3>Aida</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque est nemo, voluptates vero dolore aut.</p>
+                <p>Putra dari Bpk. Lorem <br> dan <br> Ibu Ipsum</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="info" class="info">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-8 col-10 text-center">
+            <h2>Informasi Acara</h2>
+            <p class="alamat">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae eum unde quam!</p>
+
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d830.9069591482804!2d130.40124738285655!3d33.5890109076399!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x35419190236c8f81%3A0xcd12b689c238ad38!2sDaimaru!5e0!3m2!1sid!2sid!4v1762870665119!5m2!1sid!2sid" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+            <a href="https://maps.app.goo.gl/7oSi4obnXMGVbbYh7" target="_blank" class="btn btn-light btn-sm my-3 ">Klik untuk membuka peta</a>
+            <p class="description">Diharapkan untuk tidak salah alamat dan tanggal. Manakala tiba di tujuan namun tidak ada tanda-tanda sedang dilangsungkan pernikahan, boleh jadi Anda salah jadwal, atau salah tempat.</p>
+          </div>
+        </div>
+
+        <div class="row justify-content-center mt-4">
+          <div class="col-md-5 col-10">
+            <div class="card text-center text-bg-light mb-5">
+            <div class="card-header">Akad Nikah</div>
+            <div class="card-body">
+                <div class="row justify-content-center">
+                  <div class="col-md-6">
+                    <i class="bi bi-clock d-block"></i>
+                    <span>08.00 - 10.00</span>
+                  </div>
+                  <div class="col-md-6">
+                    <i class="bi bi-calendar3 d-block"></i>
+                    <span>Minggu, 25 Mei 2025</span>
+                  </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                Saat acara akad diharapkan untuk kondusif menjaga kekhidmatan dan kekhusyuan seluruh prosesi.
+            </div>
+          </div>
+          </div>
+          <div class="col-md-5 col-10">
+            <div class="card text-center text-bg-light">
+            <div class="card-header">Resepsi</div>
+            <div class="card-body">
+                <div class="row justify-content-center">
+                  <div class="col-md-6">
+                    <i class="bi bi-clock d-block"></i>
+                    <span>11.00 - Selesai</span>
+                  </div>
+                  <div class="col-md-6">
+                    <i class="bi bi-calendar3 d-block"></i>
+                    <span>Minggu, 25 Mei 2025</span>
+                  </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                Saat acara akad diharapkan untuk kondusif menjaga kekhidmatan dan kekhusyuan seluruh prosesi.
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="story" class="story">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-8 col-10 text-center">
+            <span>Awal Pertemuan Kami</span>
+            <h2>Cerita Kami</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore ipsum nesciunt illo earum qui adipisci.</p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <ul class="timeline">
+              <li>
+                <div class="timeline-image" style="background-image: url(img/rsud.jpg);"></div>
+                <div class="timeline-panel">
+                  <div class="timeline-heading">
+                    <h3>Pertama Bertemu</h3>
+                    <span>2 Februari 2023</span>
+                  </div>
+                  <div class="timeline-body">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi consectetur quia rerum commodi non.</p>
+                  </div>
+                </div>
+              </li>
+              <li class="timeline-inverted">
+                <div class="timeline-image" style="background-image: url(img/rsud.jpg);"></div>
+                <div class="timeline-panel">
+                  <div class="timeline-heading">
+                    <h3>Mulai Serius</h3>
+                    <span>22 Juni 2023</span>
+                  </div>
+                  <div class="timeline-body">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas molestias adipisci neque consequatur cupiditate harum modi odio dicta?</p>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="timeline-image" style="background-image: url(img/rsud.jpg);"></div>
+                <div class="timeline-panel">
+                  <div class="timeline-heading">
+                    <h3>Tunangan</h3>
+                    <span>22 Juni 2025</span>
+                  </div>
+                  <div class="timeline-body">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus quasi libero nulla voluptatum maiores perspiciatis, esse quod labore doloremque alias voluptate ut reiciendis et.</p>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery" class="gallery">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-8 col-10 text-center">
+            <span>Memori Kisah Kami</span>
+            <h2>Galeri Foto</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore ipsum nesciunt illo earum qui adipisci.</p>
+          </div>
+        </div>  
+
+        <div class="row row-cols-lg-4 row-cols-md-3 row-cols-sm-2 row-cols-1 justify-content-center">
+          <div class="col mt-3">
+            <a href="img/gallery/gambar-1.jpg" data-toggle="lightbox" data-caption="" data-gallery="my-gallery">
+              <img src="img/gallery/thumbnail/gambar-1.jpg" alt="Hijra & Aida" class="img-fluid w-100 rounded">
+            </a>
+          </div>
+          <div class="col mt-3">
+            <a href="https://picsum.photos/id/20/1200/768" data-toggle="lightbox" data-caption="" data-gallery="my-gallery">
+              <img src="https://picsum.photos/id/20/300/400" alt="Hijra & Aida" class="img-fluid w-100 rounded">
+            </a>
+          </div>
+          <div class="col mt-3">
+            <a href="https://picsum.photos/id/23/1200/768" data-toggle="lightbox" data-caption="" data-gallery="my-gallery">
+              <img src="https://picsum.photos/id/23/300/400" alt="Hijra & Aida" class="img-fluid w-100 rounded">
+            </a>
+          </div>
+          <div class="col mt-3">
+            <a href="https://picsum.photos/id/40/1200/768" data-toggle="lightbox" data-caption="" data-gallery="my-gallery">
+              <img src="https://picsum.photos/id/40/300/400" alt="Hijra & Aida" class="img-fluid w-100 rounded">
+            </a>
+          </div>
+          <div class="col mt-3">
+            <a href="https://picsum.photos/id/41/1200/768" data-toggle="lightbox" data-caption="" data-gallery="my-gallery">
+              <img src="https://picsum.photos/id/41/300/400" alt="Hijra & Aida" class="img-fluid w-100 rounded">
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="rsvp" class="rsvp">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-8 col-10 text-center">
+            <h2>Konfirmasi Kehadiran</h2>
+            <p>Isi form di bawah ini untuk melakukan kehadiran.</p>
+          </div>
+        </div>
+        
+        <form class="row row-cols-md-auto g-3 align-items-center justify-content-center" method="POST" action="https://script.google.com/macros/s/AKfycbzz3oY3n3Up5q3e5T_tBkOwsiYKN75k3zO3JiKIl6FCwNW4MUxowgvBdYRnLm70XUO0/exec" id="my-form">
+          <div class="col-12">
+            <div class="mb-3">
+              <label for="nama" class="form-label">Nama</label>
+              <input type="text" class="form-control" id="nama" name="nama">
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="mb-3">
+              <label for="jumlah" class="form-label">Jumlah</label>
+              <input type="number" class="form-control" id="jumlah" name="jumlah" min="1" max="5" length="1" value="1">
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="mb-3">
+              <label for="status" class="form-label">Status</label>
+              <select name="status" id="status"class="form-select">
+                <option selected>Pilih salah satu</option>
+                <option value="1">Hadir</option>
+                <option value="2">Tidak Hadir</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-12" style="margin-top: 35px;">
+            <button class="btn btn-primary">Kirim</button>
+          </div>
+        </form>
+
+      </div>  
+    </section>
+
+    <section id="gifts" class="gifts">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-8 col-10 text-center">
+            <span>Ungkapan tanda kasih</span>
+            <h2>Kirim Hadiah</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, at tenetur! Quidem neque vitae animi expedita sapiente enim exercitationem ab voluptatibus?</p>
+          </div>
+        </div>
+
+        <div class="row justify-content-center text-center">
+          <div class="col-md-6">
+            <ul class="list-group">
+              <li class="list-group-item">
+                <div class="fw-bold">BCA</div> 
+                12345678 - Mohammad Hijra Anshordiknas
+              </li>
+              <li class="list-group-item">
+                <div class="fw-bold">Mandiri</div> 
+                987654321 - Mohammad Hijra Anshordiknas
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col text-center">
+            <small class="bloc">&copy; Hijra Wedding. All Rigts Reserved</small>
+            <small class="block">Design by <a href="https://instagram.com/mhjr.ad">@mhijra.ad</a>.</small>
+
+            <ul class="mt-3">
+              <li><a href="#"><i class="bi bi-instagram"></i></a></li>
+              <li><a href="#"><i class="bi bi-youtube"></i></a></li>
+              <li><a href="#"><i class="bi bi-twitter-x"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <div id="audio-container">
+      <audio id="song" autoplay loop>
+        <source src="audio/beautiful-in-white-instrument.mp3" type="audio/mp3">
+      </audio>
+
+
+      <div class="audio-icon-wrapper" style="display: none;">
+        <i class="bi bi-disc"></i>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+
+    <!-- Framework bingkai poto -->
+    <script src="https://cdn.jsdelivr.net/npm/bs5-lightbox@1.8.5/dist/index.bundle.min.js"></script>
+
+    <script>
+      simplyCountdown('.my-countdown', {
+        year: 2025, // Target year (required)
+        month: 6, // Target month [1-12] (required)
+        day: 28, // Target day [1-31] (required)
+        hours: 8, // Target hour [0-23], default: 0
+        words: { // Custom labels, with lambda for plurals
+            days: { root: 'hari', lambda: (root, n) => n > 1 ? root + '' : root },
+            hours: { root: 'jam', lambda: (root, n) => n > 1 ? root + '' : root },
+            minutes: { root: 'menit', lambda: (root, n) => n > 1 ? root + '' : root },
+            seconds: { root: 'detik', lambda: (root, n) => n > 1 ? root + '' : root }
+        },
+        //plural: true, // Use plurals for labels
+        //inline: false, // Inline format: e.g., "24 days, 4 hours, 2 minutes"
+        //inlineSeparator: ', ', // Separator for inline format, default: ", "
+        //inlineClass: 'simply-countdown-inline', // CSS class for inline countdown
+        //enableUtc: false, // Use UTC time if true
+        //refresh: 1000, // Refresh interval in ms, default: 1000
+        //sectionClass: 'simply-section', // CSS class for each countdown section
+        //amountClass: 'simply-amount', // CSS class for numeric values
+        //wordClass: 'simply-word', // CSS class for unit labels
+        //zeroPad: false, // Pad numbers with leading zero
+        //removeZeroUnits: false, // Remove units with zero value
+        //countUp: false, // Count up after reaching zero
+        //onEnd: () => {}, // Callback when countdown ends
+        //onStop: () => {}, // Callback when countdown is stopped
+        //onResume: () => {}, // Callback when countdown is resumed
+        //onUpdate: (params) => {} // Callback when countdown is updated
+      });
+    </script>
+
+    <!-- Fitur Navbar Mobile -->
+    <script>
+      const hamburger = document.querySelector('.navbar-toggler');
+      const stickyTop = document.querySelector('.sticky-top');
+      const offcanvas = document.querySelector('.offcanvas');
+
+      hamburger.addEventListener('click', function(){
+        stickyTop.style.overflow = 'visible';
+      })
+      
+      offcanvas.addEventListener('hidden.bs.offcanvas', function(){
+        stickyTop.style.overflow = 'hidden';
+      })
+
+    </script>
+
+    <!-- Fitur Disable Scroll -->
+    <script>
+      const rootElement = document.querySelector(":root");
+      const audioIconWrapper = document.querySelector('.audio-icon-wrapper');
+      const audioIcon = document.querySelector('.audio-icon-wrapper i');
+      const song = document.querySelector('#song');
+      let isPlaying = false;
+
+      function disableScroll(){
+        scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+
+        window.onscroll = function(){
+          window.scrollTo(scrollTop, scrollLeft);
+        }
+
+        rootElement.style.scrollBehavior = 'auto';
+      }
+
+      function enableScroll(){
+        window.onscroll = function(){}
+        rootElement.style.scrollBehavior = 'smooth';
+        //localStorage.setItem('opened', 'true');
+        playAudio();
+      }
+
+      function playAudio() {
+        //song.volume = 0.1;
+        audioIconWrapper.style.display = 'flex';
+        song.play();
+        isPlaying = true;
+      }
+
+      audioIconWrapper.onclick = function() {
+        if(isPlaying) {
+          song.pause();
+          audioIcon.classList.remove('bi-disc');
+          audioIcon.classList.add('bi-pause-circle');
+        } else {
+          song.play();
+          audioIcon.classList.add('bi-disc');
+          audioIcon.classList.remove('bi-pause-circle');
+        }
+        
+        isPlaying = !isPlaying;
+      }
+
+      //fitur pernah buka undangan tanpa menekan buka undangan lagi
+      //if (!localStorage.getItem('opened')){
+      //  disableScroll();
+      //}
+      disableScroll();
+    </script>
+
+    <!-- setelah submit kehadiran lansung kembali ke halaman awal -->
+    <script>
+      window.addEventListener("load", function() {
+        const form = document.getElementById('my-form');
+        form.addEventListener("submit", function(e) {
+          e.preventDefault();
+          const data = new FormData(form);
+          const action = e.target.action;
+          fetch(action, {
+            method: 'POST',
+            body: data,
+          })
+          .then(() => {
+            alert("Konfirmasi kehadiran berhasil terkirim!");
+          })
+        });
+      });
+    </script>
+
+    <script>
+      const urlParams = new URLSearchParams(window.location.search);
+      const nama = urlParams.get('n') || '';
+      //console.log(n);
+      const pronoun = urlParams.get('p') || 'Bapak/Ibu/Saudara/i';
+
+      const namaContainer = document.querySelector('.hero h4 span');
+      namaContainer.innerText = `${pronoun} ${nama},`.replace(/ ,$/, ','); 
+
+      // menampilkan nama pada pengisian daftar tamu
+      document.querySelector('#nama').value = nama;
+    </script>
+
+
+  </body>
+</html>

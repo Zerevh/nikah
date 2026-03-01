@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 19, 2025 at 02:18 PM
+-- Generation Time: Mar 01, 2026 at 02:39 PM
 -- Server version: 10.1.30-MariaDB
 -- PHP Version: 7.2.1
 
@@ -451,6 +451,26 @@ INSERT INTO `suvenir` (`id_tksuvenir`, `id_user`, `latitude`, `longitude`, `nm_t
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tb_weeding`
+--
+
+CREATE TABLE `tb_weeding` (
+  `id_wdg` int(25) NOT NULL,
+  `nm_pria` varchar(35) NOT NULL,
+  `nm_wanita` varchar(35) NOT NULL,
+  `tgl_acr` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tb_weeding`
+--
+
+INSERT INTO `tb_weeding` (`id_wdg`, `nm_pria`, `nm_wanita`, `tgl_acr`) VALUES
+(1, 'Muhammad Sumbul', 'Icha Tinta Tiktod', '2026-02-26');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tes_map`
 --
 
@@ -526,7 +546,8 @@ INSERT INTO `user_access_menu` (`id`, `role_id`, `menu_id`) VALUES
 (5, 1, 3),
 (6, 1, 5),
 (20, 1, 9),
-(21, 1, 7);
+(21, 1, 7),
+(22, 1, 8);
 
 -- --------------------------------------------------------
 
@@ -549,7 +570,8 @@ INSERT INTO `user_menu` (`id`, `menu`) VALUES
 (3, 'Menu'),
 (5, 'Map'),
 (6, 'Data'),
-(7, 'Laporan');
+(7, 'Laporan'),
+(8, 'Template');
 
 -- --------------------------------------------------------
 
@@ -611,7 +633,8 @@ INSERT INTO `user_sub_menu` (`id`, `menu_id`, `title`, `url`, `icon`, `is_active
 (24, 7, 'Laporan Penginapan', 'laporan/lappenginapan', 'fas fa-fw fa-hotel', 1),
 (25, 7, 'Laporan Mall', 'laporan/lapmall', 'fas fa-fw fa-building', 1),
 (26, 6, 'Toko Suvenir', 'data/datasuvenir', 'fas fa-fw fa-store-alt', 1),
-(27, 7, 'Laporan Toko Suvenir', 'laporan/lapsuvenir', 'fas fa-fw fa-store-alt', 1);
+(27, 7, 'Laporan Toko Suvenir', 'laporan/lapsuvenir', 'fas fa-fw fa-store-alt', 1),
+(28, 8, 'Template', 'template/tempWeeding', 'fas fa-fw fa-key', 1);
 
 -- --------------------------------------------------------
 
@@ -753,6 +776,12 @@ ALTER TABLE `suvenir`
   ADD PRIMARY KEY (`id_tksuvenir`);
 
 --
+-- Indexes for table `tb_weeding`
+--
+ALTER TABLE `tb_weeding`
+  ADD PRIMARY KEY (`id_wdg`);
+
+--
 -- Indexes for table `tes_map`
 --
 ALTER TABLE `tes_map`
@@ -883,6 +912,12 @@ ALTER TABLE `suvenir`
   MODIFY `id_tksuvenir` int(25) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
+-- AUTO_INCREMENT for table `tb_weeding`
+--
+ALTER TABLE `tb_weeding`
+  MODIFY `id_wdg` int(25) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `tes_map`
 --
 ALTER TABLE `tes_map`
@@ -898,13 +933,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `user_access_menu`
 --
 ALTER TABLE `user_access_menu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `user_menu`
 --
 ALTER TABLE `user_menu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `user_role`
@@ -916,7 +951,7 @@ ALTER TABLE `user_role`
 -- AUTO_INCREMENT for table `user_sub_menu`
 --
 ALTER TABLE `user_sub_menu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT for table `user_token`

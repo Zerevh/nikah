@@ -36,7 +36,7 @@
     <section id="hero" class="hero w-100 h-100 p-3 mx-auto text-center d-flex justify-content-center align-items-center text-white">
         <main>
             <h4>Kepada <span></span> </h4>
-            <h1>Hijra & Aida</h1>
+            <h1><?= $temp['nm_pria']; ?> & <?= $temp['nm_wanita']; ?></h1>
             <p class="p2">Akan melangsungkan resepsi pernikahan dalam;</p2>
             <div class="my-countdown simply-countdown"></div>
             <a href="#undang" class="btn btn-lg mt-4" onClick="enableScroll()">Lihat Undangan</a>
@@ -82,13 +82,12 @@
           <div class="col-lg-6">
             <div class="row">
               <div class="col-8 text-end">
-                <h3>M.Hijra Anshordiknas</h3>
-                <p><?= $temp['nm_pria']; ?></p>
+                <h3><?= $temp['nm_pria']; ?></h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque est nemo, voluptates vero dolore aut.</p>
                 <p>Putra dari Bpk. Lorem <br> dan <br> Ibu Ipsum</p>
               </div>
               <div class="col-4">
-                <img src="img/man.png" alt="Mohammad Hijra Anshordiknas" class="img-responsive rounded-circle">
+                <img src="img/man.png" alt="img mempelai" class="img-responsive rounded-circle">
               </div>
             </div>
           </div>
@@ -98,10 +97,10 @@
           <div class="col-lg-6">
             <div class="row">
               <div class="col-4">
-                <img src="img/woman.png" alt="Aida" class="img-responsive rounded-circle">
+                <img src="img/woman.png" alt="img mempelai" class="img-responsive rounded-circle">
               </div>
               <div class="col-8">
-                <h3>Aida</h3>
+                <h3><?= $temp['nm_wanita']; ?></h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque est nemo, voluptates vero dolore aut.</p>
                 <p>Putra dari Bpk. Lorem <br> dan <br> Ibu Ipsum</p>
               </div>
@@ -184,7 +183,7 @@
           <div class="col">
             <ul class="timeline">
               <li>
-                <div class="timeline-image" style="background-image: url(img/rsud.jpg);"></div>
+                <div class="timeline-image" style="background-image: url('<?= base_url('assets/img/temp_1/rsud.jpg'); ?>');"></div>
                 <div class="timeline-panel">
                   <div class="timeline-heading">
                     <h3>Pertama Bertemu</h3>
@@ -237,8 +236,8 @@
 
         <div class="row row-cols-lg-4 row-cols-md-3 row-cols-sm-2 row-cols-1 justify-content-center">
           <div class="col mt-3">
-            <a href="img/gallery/gambar-1.jpg" data-toggle="lightbox" data-caption="" data-gallery="my-gallery">
-              <img src="img/gallery/thumbnail/gambar-1.jpg" alt="Hijra & Aida" class="img-fluid w-100 rounded">
+            <a href="<?= base_url('assets/'); ?>img/gallery/gambar-1.jpg" data-toggle="lightbox" data-caption="" data-gallery="my-gallery">
+              <img src="<?= base_url('assets/'); ?>img/gallery/thumbnail/gambar-1.jpg" alt="Hijra & Aida" class="img-fluid w-100 rounded">
             </a>
           </div>
           <div class="col mt-3">
@@ -351,7 +350,7 @@
 
     <div id="audio-container">
       <audio id="song" autoplay loop>
-        <source src="audio/beautiful-in-white-instrument.mp3" type="audio/mp3">
+        <source src="<?= base_url('assets/'); ?>audio/beautiful-in-white-instrument.mp3" type="audio/mp3">
       </audio>
 
 

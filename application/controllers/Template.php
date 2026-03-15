@@ -62,7 +62,7 @@ class Template extends CI_Controller
         }
     }
 
-    public function editWeeding($id)
+    public function editweeding($id)
     {
         $data['title'] = 'Edit Template Pengguna';
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
@@ -81,8 +81,8 @@ class Template extends CI_Controller
         } else {
             $id_wdg = $this->input->post('id_wdg', TRUE);
             $data = [
-                'nm_pria'   => $this->input->post('nm_pria', TRUE),
-                'nm_wanita'    => $this->input->post('nm_wanita', TRUE),
+                'nm_pria'=> $this->input->post('nm_pria', TRUE),
+                'nm_wanita'=> $this->input->post('nm_wanita', TRUE),
                 'tgl_acr'=> $this->input->post('tgl_acr', TRUE)
             ];
 

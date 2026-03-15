@@ -1,5 +1,6 @@
 :root {
-    --pink: #f14e95;
+    --cream: #6b5f55;
+    --countdown: #aa9685;
     --bg: #0a0a0a;
     --shadow: 0 2px 2px rgb(0 0 0 / 0.5)
 }
@@ -22,7 +23,7 @@ body {
     background-position: center;    /* Memusatkan gambar */
     background-repeat: no-repeat;   /* Mencegah pengulangan gambar */
     z-index: -1;
-    filter: grayscale();
+    /* filter: grayscale(); */
 }
 
 .hero { /*.hero: Menunjuk ke elemen HTML yang memiliki atribut class="hero".*/
@@ -35,6 +36,7 @@ body {
 }
 
 .hero h1 {
+    color: var(--cream);
     font-family: "Sacramento", cursive;
     font-size: 6rem;  /*rem adalah satuan ukuran yang berarti "root em", yaitu relatif terhadap ukuran font elemen root (biasanya <html>).*/
 }
@@ -53,14 +55,14 @@ body {
 }
 
 .hero a {
-    color: var(--pink);
+    color: var(--cream);
     background-color: white;
     box-shadow: var(--shadow);
 }
 
 .hero a:hover {
     color: white;
-    background-color: var(--pink);
+    background-color: var(--cream);
 }
 
 .mynavbar {
@@ -82,12 +84,14 @@ body {
     text-transform: uppercase;
 }
 
-.home {
-    background-image: url(img/bg-home.png);
-    background-size: cover;
+.home { 
+    background-image: url('../img/temp_1/bg-home.jpg');
     min-height: 100vh;
     margin-top: -6rem;
     padding-top: 8rem;
+    background-size: cover;         /* Menyesuaikan ukuran gambar agar menutupi seluruh area */
+    background-position: center;    /* Memusatkan gambar */
+    background-repeat: no-repeat;   /* Mencegah pengulangan gambar */
 }
 
 .home h2, 
@@ -97,7 +101,7 @@ body {
 .rsvp h2,
 .gifts h2
 {
-    color: var(--pink);
+    color: var(--cream);
     font-family: 'Sacramento';
     font-size: 5rem;
     font-weight: bold;
@@ -127,7 +131,7 @@ body {
 .home .couple h3 {
     font-family: 'Sacramento';
     font-size: 2.4rem;
-    color: var(--pink);
+    color: var(--cream);
 }
 
 .home .couple img {
@@ -150,7 +154,7 @@ body {
 
 .home .heart i {
     margin: auto;
-    color: var(--pink);
+    color: var(--cream);
 }
 
 .info {
@@ -340,20 +344,20 @@ body {
 }
 
 .rsvp button {
-    background-color: var(--pink);
+    background-color: var(--cream);
     color: white;
-    border: 1px solid var(--pink);
+    border: 1px solid var(--cream);
 }
 
 .rsvp button:horver {
     background-color: white;
-    color: var(--pink);
+    color: var(--cream);
     border: 1px solid white;
 }
 
 footer {
     padding: 3rem;
-    background-color: var(--pink);
+    background-color: var(--cream);
     color: white;
 }
 

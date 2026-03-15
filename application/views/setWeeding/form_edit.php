@@ -13,11 +13,12 @@
                     <div class="row">
                         <div class="col-lg-12">
 
-                            <form action="<?= base_url('template/editWeeding'); ?>" method="post">
+                            <form action="<?= base_url('template/editweeding/' . $temp['id_wdg']); ?>" method="post">
                                 <!--form_open_multipart untuk upload foto bawaan CI, harus diarahkan ke controler-->
                                 <div class="form-group row">
                                     <label for="nama" class="col-sm-2 col-form-label">Nama Mempelai Pria</label>
                                     <div class="col-sm-5">
+                                        <input type="hidden" name="id_wdg" id="id_wdg" value="<?= $temp['id_wdg']; ?>">
                                         <input type="text" class="form-control" name="nm_pria" id="nm_pria" value="<?= $temp['nm_pria']; ?>">
                                         <span style="color: red;"><?php echo form_error('nm_pria'); ?></span>
                                     </div>

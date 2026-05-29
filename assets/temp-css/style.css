@@ -158,8 +158,11 @@ body {
 }
 
 .info {
+    background-image: url('../img/temp_1/bg-info.jpg');
+    
+
     background-color: var(--bg);
-    color: white;
+    color: rgb(107, 19, 19);
     padding-top: 10rem;
     padding-bottom: 8rem;
 }
@@ -174,25 +177,44 @@ body {
 }
 
 .info .card {
-    background-color: rgba(255, 255, 255, 0.2) !important;
+    /* background-color: rgba(255, 255, 255, 0.2) !important;
     color: white !important;
-    border: 1px solid #999;
+    border: 1px solid #999; */
+
+    background-color: #fdf5e6 !important; /* Warna Cream/OldLace yang lembut */
+    color: #5d4037 !important;           /* Teks coklat tua agar kontras dan elegan */
+    border: 1px solid #dcd0b9;           /* Border disesuaikan agar tidak terlalu gelap */
+    border-radius: 15px;                 /* Membuat sudut lebih estetik */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
 }
 
 .info .card-header {
-    border-bottom: 1px solid #999;
+    /* border-bottom: 1px solid #999;
     text-transform: uppercase;
-    letter-spacing: 0.1rem;
+    letter-spacing: 0.1rem; */
+    
+    background-color: #f5e6ca !important; 
+    border-bottom: 1px solid #dcd0b9;
+    font-weight: 600;
+
 }
 
 .info .card-body {
-    font-size: 1rem;
+    /* font-size: 1rem; */
+
+    color: #b08968; 
+    font-size: 1.5rem;
+    margin-bottom: 5px;
 }
 
 .info .card-footer {
-    border-top: 1px solid #999;
+    /* border-top: 1px solid #999;
     font-size: 0.9rem;
-    font-weight: 300;
+    font-weight: 300; */
+
+    background-color: transparent;
+    border-top: 1px dashed #dcd0b9; /* Garis putus-putus untuk kesan vintage */
+    color: #8d7b68;
 }
 
 .story,

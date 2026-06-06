@@ -100,12 +100,12 @@ body {
 }
 
 .home { 
-    background-image: url('../img/temp_1/bg-home.jpg');
+    background-image: url('../img/temp_1/bg-1.png');
     min-height: 100vh;
     margin-top: -6rem;
     padding-top: 8rem;
     background-size: cover;         /* Menyesuaikan ukuran gambar agar menutupi seluruh area */
-    background-position: center;    /* Memusatkan gambar */
+    background-position: bottom center;    /* Memusatkan gambar */
     background-repeat: no-repeat;   /* Mencegah pengulangan gambar */
 }
 
@@ -175,13 +175,48 @@ body {
 }
 
 .info {
-    background-image: url('../img/temp_1/bg-info.jpg');
+    background-image: url('../img/temp_1/bg-1.png');
     
 
     background-color: var(--bg);
     color: rgb(107, 19, 19);
     padding-top: 10rem;
     padding-bottom: 8rem;
+}
+
+.ranting {
+    position        : absolute;
+    width           : 450px;      /* sesuaikan ukuran gambar */
+    pointer-events  : none;       /* tidak menghalangi klik tombol/link */
+    top             : 950px;       /* 20px dari atas parent */
+    right           : 80%;        /* 10% dari kanan parent */
+    rotate          : 90deg;
+    /* Animasi goyang */
+    transform-origin: bottom center;
+    animation       : goyang-ranting 9s ease-in-out infinite;
+}
+
+@keyframes goyang-ranting {
+    /* translateX(-50%) wajib ada di tiap frame! */
+    /* karena left:50% dan transform dipakai bersamaan */
+    0%,  100% { transform: translateX(-50%) rotate(0deg);  }
+    25%        { transform: translateX(-50%) rotate(4deg);  }
+    75%        { transform: translateX(-50%) rotate(-4deg); }
+}
+
+@keyframes goyang-ranting {
+    /* 0% dan 100% nilainya sama (0deg), sebagai posisi diam/awal */
+    0%, 100% { 
+        transform: rotate(0deg); 
+    }
+    /* Di detik ke-1.25 (25%), ranting mengayun sedikit ke satu sisi */
+    25% { 
+        transform: rotate(3deg); 
+    }
+    /* Di detik ke-3.75 (75%), ranting mengayun ke sisi sebaliknya */
+    75% { 
+        transform: rotate(-3deg); 
+    }
 }
 
 .info .alamat {
@@ -436,9 +471,7 @@ footer li {
         font-size: 100%;
     }
 
-    .info {
-        background-position: 99% center ;
-    }
+    
 
     .audio-icon-wrapper {
         right: 2rem;

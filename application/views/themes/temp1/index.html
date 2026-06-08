@@ -69,10 +69,12 @@
         </div>
       </nav>
 
+      
       <section id="home" class="home">
         <div class="container">
           <div class="row justify-content-center">
             <div class="col-md-8 text-center">
+              <canvas id="particle-canvas"></canvas>
               <h2>Acara Pernikahan</h2>
               <h3>Diselenggarakan pada tanggal 25 Mei 2025 di Marabahan, Kalimantan Selatan</h3>
               <p>Oleh karena itu, dengan segala hormat kami untuk mengundang Bapak/Ibu, Saudara/i, untuk berhadir pada acara pernikahan kami.</p>
@@ -486,6 +488,128 @@
         document.querySelector('#nama').value = nama;
       </script>
 
+      <script>
+        (function(){
+          const canvas = document.getElementById('particle-canvas');
+          const ctx = canvas.getContext('2d');
+
+          function resize(){
+            const rect = document.body.getBoundingClientRect();
+            canvas.style.position = 'fixed';
+            canvas.style.top    = '0';
+            canvas.style.left   = rect.left + 'px';
+            canvas.style.width  = rect.width + 'px';
+            canvas.style.height = window.innerHeight + 'px';
+            canvas.width  = rect.width;
+            canvas.height = window.innerHeight;
+          }
+          resize();
+          window.addEventListener('resize', resize);
+
+          const COLORS = [
+            [255,220,200],[255,200,210],[255,240,220],
+            [210,180,160],[255,255,255],[220,170,150],[255,210,230]
+          ];
+          const SHAPES = ['petal','circle','diamond','star','heart'];
+
+          function rand(a,b){ return Math.random()*(b-a)+a; }
+
+          function newP(){
+            return {
+              baseX: rand(0, canvas.width),
+              baseY: rand(0, canvas.height),
+              x: 0, y: 0,
+              size: rand(5,12),
+              opacity: rand(0.1,0.35),
+              rotation: rand(0, Math.PI*2),
+              rotSpeed: rand(-0.003, 0.003),
+              color: COLORS[Math.floor(Math.random()*COLORS.length)],
+              shape: SHAPES[Math.floor(Math.random()*SHAPES.length)],
+              tx: rand(0,Math.PI*2), txSpeed: rand(0.0008,0.003), txAmp: rand(30,80),
+              ty: rand(0,Math.PI*2), tySpeed: rand(0.0005,0.002), tyAmp: rand(20,60),
+              to: rand(0,Math.PI*2), toSpeed: rand(0.003,0.008),
+            };
+          }
+
+          const particles = Array.from({length: 28}, newP);
+
+          function drawPetal(s){
+            ctx.beginPath();
+            ctx.save(); ctx.scale(1,1.7);
+            ctx.arc(0,0,s*.5,0,Math.PI*2);
+            ctx.restore(); ctx.fill();
+          }
+
+          function drawDiamond(s){
+            ctx.beginPath();
+            ctx.moveTo(0,-s*.75); ctx.lineTo(s*.42,0);
+            ctx.lineTo(0,s*.75);  ctx.lineTo(-s*.42,0);
+            ctx.closePath(); ctx.fill();
+          }
+
+          function drawStar(s){
+            ctx.beginPath();
+            for(let i=0;i<4;i++){
+              const a = (i/4)*Math.PI*2;
+              ctx.lineTo(Math.cos(a)*s*.5, Math.sin(a)*s*.5);
+              ctx.lineTo(Math.cos(a+Math.PI/4)*s*.15, Math.sin(a+Math.PI/4)*s*.15);
+            }
+            ctx.closePath(); ctx.fill();
+          }
+
+          function drawHeart(s){
+            const k = s*.5;
+            ctx.beginPath();
+            ctx.moveTo(0, k*.4);
+            ctx.bezierCurveTo( k*.1,-k*.3,  k*1.1,-k*.3,  k*1.1, k*.4);
+            ctx.bezierCurveTo( k*1.1, k*1.1, 0, k*1.6, 0, k*1.6);
+            ctx.bezierCurveTo( 0, k*1.6, -k*1.1, k*1.1, -k*1.1, k*.4);
+            ctx.bezierCurveTo(-k*1.1,-k*.3,  k*.1,-k*.3,  0, k*.4);
+            ctx.closePath(); ctx.fill();
+          }
+
+          function animate(){
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            for(const p of particles){
+              p.tx += p.txSpeed;
+              p.ty += p.tySpeed;
+              p.to += p.toSpeed;
+              p.rotation += p.rotSpeed;
+
+              p.x = p.baseX + Math.sin(p.tx) * p.txAmp;
+              p.y = p.baseY + Math.sin(p.ty) * p.tyAmp;
+
+              if(p.x < -20) p.baseX += canvas.width + 20;
+              if(p.x > canvas.width  + 20) p.baseX -= canvas.width + 20;
+              if(p.y < -20) p.baseY += canvas.height + 20;
+              if(p.y > canvas.height + 20) p.baseY -= canvas.height + 20;
+
+              const op = p.opacity * (0.7 + 0.3 * Math.sin(p.to));
+              const [r,g,b] = p.color;
+
+              ctx.save();
+              ctx.globalAlpha = op;
+              ctx.fillStyle = `rgb(${r},${g},${b})`;
+              ctx.translate(p.x, p.y);
+              ctx.rotate(p.rotation);
+
+              const s = p.size;
+              if     (p.shape==='petal')   drawPetal(s);
+              else if(p.shape==='circle')  { ctx.beginPath(); ctx.arc(0,0,s*.45,0,Math.PI*2); ctx.fill(); }
+              else if(p.shape==='diamond') drawDiamond(s);
+              else if(p.shape==='star')    drawStar(s);
+              else                         drawHeart(s);
+
+              ctx.restore();
+            }
+
+            requestAnimationFrame(animate);
+          }
+
+          animate();
+        })();
+      </script>
 
     </body>
   </html>

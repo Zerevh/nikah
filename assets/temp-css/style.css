@@ -18,6 +18,16 @@ body {
     box-shadow: 0 0 100px rgba(0,0,0,0.8); /* Shadow agar pemisah PC & Mobile tegas */
 }
 
+#particle-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    max-width: 576px;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9998;
+}
+
 .hero::before {
     content: '';
     position: absolute;
